@@ -4,10 +4,11 @@ import Pageheader from "./Pageheader";
 import Topbanner from "./Topbanner";
 import Card from "./Card";
 import Card1 from "./Card1";
+import NavBar from "./NavBar";
 export default function Dashboard() {
   return (
     <div>
-      <Nav />
+      <NavBar />
         <Topbanner />
         <Pageheader />
       <div className="content">
