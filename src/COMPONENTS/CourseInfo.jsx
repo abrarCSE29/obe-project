@@ -91,6 +91,7 @@ export default function CourseInfo() {
               display: "flex",
               justifyContent: "space-evenly",
               width: "70%",
+              margin: "auto",
             }}
           >
             <Box sx={{ width: "60%" }}>

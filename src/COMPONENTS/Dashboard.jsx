@@ -5,16 +5,38 @@ import Topbanner from "./Topbanner";
 import Card from "./Card";
 import Card1 from "./Card1";
 import NavBar from "./NavBar";
+import { Box } from "@mui/material";
+import PageTemplate from "./PageTemplate";
 export default function Dashboard() {
   return (
-    <div>
-      <NavBar />
-        <Topbanner />
+    <Box
+      sx={{
+        height: "400px",
+        width: "100%",
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-evenly",
+      }}
+    >
+      <PageTemplate />
+      {/* <Topbanner /> */}
+      <Box
+        component="main"
+        sx={{
+          flexGrow: 1,
+          bgcolor: "background.default",
+          p: 3,
+          position: "relative",
+          top: "25%",
+        }}
+      >
         <Pageheader />
-      <div className="content">
-        <Card cardDesc="Active Courses" cardNum="10" />
-        <Card1 cardDesc="Marks Submission Remaining" cardNum="2" />
-      </div>
+        <div className="content" style={{display: "flex", flexDirection: "row", marginLeft: "0"}}>
+          <Card cardDesc="Active Courses" cardNum="10" />
+          <Card1 cardDesc="Marks Submission Remaining" cardNum="2" />
+        </div>
+      </Box>
+
       {/* <div className="content-paragraph">Childe not yet he to known control. Soon had was long to vaunted his,
         did weary her that congealed ways in lyres cared. Mote but open will
         who, ah passed blast who who his mirth dear there he. True he sighed by
@@ -93,6 +115,6 @@ export default function Dashboard() {
         and perchance loathed. Scene muse for had sullen and, hall to below true
         muse fame, childe time to flee eros. Many perchance in cared charms. He
         lurked hall of a nor of her in, finds.</div> */}
-    </div>
+    </Box>
   );
 }

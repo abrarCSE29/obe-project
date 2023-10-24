@@ -8,7 +8,7 @@ export default function PageTemplate() {
   return (
     <Box sx={{display: "flex", flexDirection: "row"}}>
       <NavBar />
-      {/* <Box sx={{position: "relative",left: "100%"}}><Topbanner /></Box> */}
+      <Box sx={{position: "absolute", top: "0", right: "0"}}><Topbanner /></Box>
     </Box>
   )
 }
