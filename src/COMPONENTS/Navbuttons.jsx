@@ -2,7 +2,7 @@ import React from 'react'
 import Button from '@mui/material/Button';
 export default function Navbuttons() {
   return (
-    <div className="navButton">
+    <div className="navButton" style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
        <Button 
        sx={{
         background : "#C9CEFF",
