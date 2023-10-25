@@ -5,7 +5,7 @@ import Topbanner from "./Topbanner";
 import Card from "./Card";
 import Card1 from "./Card1";
 import NavBar from "./NavBar";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import PageTemplate from "./PageTemplate";
 export default function Dashboard() {
   return (
@@ -30,11 +30,17 @@ export default function Dashboard() {
           top: "25%",
         }}
       >
-        <Pageheader />
-        <div className="content" style={{display: "flex", flexDirection: "row", marginLeft: "0"}}>
+        <Typography
+          variant="h3"
+          sx={{ textAlign: "left", textDecoration: "underline rgb(81, 42, 255)" }}
+          gutterBottom
+        >
+          Dashboard
+        </Typography>
+        <Box sx={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center"}}>
           <Card cardDesc="Active Courses" cardNum="10" />
           <Card1 cardDesc="Marks Submission Remaining" cardNum="2" />
-        </div>
+        </Box>
       </Box>
 
       {/* <div className="content-paragraph">Childe not yet he to known control. Soon had was long to vaunted his,
