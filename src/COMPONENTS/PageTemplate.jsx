@@ -1,6 +1,5 @@
 import { Box } from '@mui/material'
 import React from 'react'
-import Nav from './Nav'
 import Topbanner from './Topbanner'
 import NavBar from './NavBar'
 

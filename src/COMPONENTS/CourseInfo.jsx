@@ -2,7 +2,7 @@ import { Box, Button, Typography } from "@mui/material";
 import React from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import TutorialMarksViewActions from "./TutorialMarksViewActions";
-import PageTemplate from "./PageTemplate";
+import { useLocation } from "react-router-dom";
 
 const columns = [
   {
@@ -19,7 +19,9 @@ const columns = [
     field: "actions",
     headerName: "Details",
     width: 200,
-    renderCell: (params) => <TutorialMarksViewActions />,
+    renderCell: (params) => (
+      <TutorialMarksViewActions title={params.value.title} />
+    ),
   },
 ];
 
@@ -42,24 +44,32 @@ const rows = [
 ];
 
 export default function CourseInfo() {
+  const location = useLocation();
+
   return (
     <Box
       sx={{
-        height: "400px",
-        width: "100%",
+        height: 400,
         display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-evenly",
+        flexGrow: "1",
       }}
     >
-      <PageTemplate />
       <Box
         component="main"
-        sx={{ flexGrow: 1, bgcolor: "background.default", p: 3, position: "relative",top:"25%"}}
+        sx={{
+          flexGrow: 1,
+          bgcolor: "background.default",
+          p: 3,
+          position: "relative",
+          top: "25%",
+        }}
       >
         <Typography
           variant="h3"
-          sx={{ textAlign: "left", textDecoration: "underline rgb(81, 42, 255)" }}
+          sx={{
+            textAlign: "left",
+            textDecoration: "underline rgb(81, 42, 255)",
+          }}
           gutterBottom
         >
           Course Information
@@ -67,10 +77,12 @@ export default function CourseInfo() {
         <Box sx={{ display: "flex", flexDirection: "row", height: "40%" }}>
           <Box sx={{ width: "50%" }}>
             <Typography variant="body1" sx={{ textAlign: "left" }} gutterBottom>
-              <strong>Course ID: </strong>CSE-105
+              <strong>Course ID: </strong>
+              {location.state.courseId}
             </Typography>
             <Typography variant="body1" sx={{ textAlign: "left" }} gutterBottom>
-              <strong>Course Name: </strong>Structured Programming Language
+              <strong>Course Name: </strong>
+              {location.state.courseName}
             </Typography>
           </Box>
           <Box>
@@ -78,7 +90,8 @@ export default function CourseInfo() {
               <strong>Department: </strong>Computer Science and Engineering
             </Typography>
             <Typography variant="body1" sx={{ textAlign: "left" }} gutterBottom>
-              <strong>Exam Title: </strong>1st Year 1st Semester B.Sc. 2021
+              <strong>Exam Title: </strong>
+              {location.state.title}
             </Typography>
           </Box>
         </Box>

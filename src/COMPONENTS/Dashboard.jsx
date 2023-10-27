@@ -1,25 +1,18 @@
 import React from "react";
-import Nav from "./Nav";
-import Pageheader from "./Pageheader";
-import Topbanner from "./Topbanner";
+import { Box, Typography } from "@mui/material";
+
 import Card from "./Card";
 import Card1 from "./Card1";
-import NavBar from "./NavBar";
-import { Box, Typography } from "@mui/material";
-import PageTemplate from "./PageTemplate";
+
 export default function Dashboard() {
   return (
     <Box
       sx={{
-        height: "400px",
-        width: "100%",
+        height: 400,
         display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-evenly",
+        flexGrow: "1",
       }}
     >
-      <PageTemplate />
-      {/* <Topbanner /> */}
       <Box
         component="main"
         sx={{
@@ -32,12 +25,22 @@ export default function Dashboard() {
       >
         <Typography
           variant="h3"
-          sx={{ textAlign: "left", textDecoration: "underline rgb(81, 42, 255)" }}
+          sx={{
+            textAlign: "left",
+            textDecoration: "underline rgb(81, 42, 255)",
+          }}
           gutterBottom
         >
           Dashboard
         </Typography>
-        <Box sx={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center"}}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           <Card cardDesc="Active Courses" cardNum="10" />
           <Card1 cardDesc="Marks Submission Remaining" cardNum="2" />
         </Box>

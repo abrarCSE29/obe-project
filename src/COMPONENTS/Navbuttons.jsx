@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
 
 export default function Navbuttons() {
+  const navigate = useNavigate();
+
   return (
     <div
       className="navButton"
@@ -14,13 +17,14 @@ export default function Navbuttons() {
           fontWeight: "bold",
           borderRadius: 5,
           width: 180,
-        //   marginBottom: 3,
+          //   marginBottom: 3,
           ":hover": {
             background: "#FF9900",
             color: "white",
           },
         }}
         variant="contained"
+        onClick={() => navigate("/")}
       >
         Dashboard
       </Button>
@@ -32,13 +36,14 @@ export default function Navbuttons() {
           fontWeight: "bold",
           borderRadius: 5,
           width: 180,
-        //   marginBottom: 3,
+          //   marginBottom: 3,
           ":hover": {
             background: "#FF9900",
             color: "white",
           },
         }}
         variant="contained"
+        onClick={() => navigate("/view-courses")}
       >
         View Courses
       </Button>
@@ -50,13 +55,14 @@ export default function Navbuttons() {
           fontWeight: "bold",
           borderRadius: 5,
           width: 180,
-        //   marginBottom: 3,
+          //   marginBottom: 3,
           ":hover": {
             background: "#FF9900",
             color: "white",
           },
         }}
         variant="contained"
+        onClick={() => navigate("/submit-request")}
       >
         Submit Request
       </Button>
@@ -75,6 +81,7 @@ export default function Navbuttons() {
           },
         }}
         variant="contained"
+        onClick={() => navigate("/result-statistics")}
       >
         Result Statistics
       </Button>

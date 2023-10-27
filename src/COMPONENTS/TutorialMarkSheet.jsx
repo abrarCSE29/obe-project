@@ -1,7 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import React from "react";
-import PageTemplate from "./PageTemplate";
 import { DataGrid } from "@mui/x-data-grid";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const columns = [
   {
@@ -48,17 +48,17 @@ const rows = [
 ];
 
 export default function TutorialMarkSheet() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   return (
     <Box
       sx={{
-        height: "400px",
-        width: "100%",
+        height: 400,
         display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-evenly",
+        flexGrow: "1",
       }}
     >
-      <PageTemplate />
       <Box
         component="main"
         sx={{
@@ -77,7 +77,7 @@ export default function TutorialMarkSheet() {
           }}
           gutterBottom
         >
-          Tutorial 1 Marks
+          {location.state.title} Marks
         </Typography>
         <Box sx={{ margin: "auto", width: "60%" }}>
           <DataGrid
@@ -113,6 +113,7 @@ export default function TutorialMarkSheet() {
               right: "10%",
               bottom: "0",
             }}
+            onClick={() => navigate(-1)}
           >
             Back
           </Button>
