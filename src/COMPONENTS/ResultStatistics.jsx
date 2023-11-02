@@ -1,5 +1,6 @@
-import { Box, Typography } from '@mui/material'
 import React from 'react'
+import { Box, Typography } from '@mui/material'
+import { BarChart } from '@mui/x-charts'
 
 export default function ResultStatistics() {
   return (
@@ -30,6 +31,20 @@ export default function ResultStatistics() {
         >
           Result Statistics
         </Typography>
+        <Box sx={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+          <BarChart
+            xAxis={[
+              { scaleType: "band", data: ["group A", "group B", "group C"] },
+            ]}
+            series={[
+              { data: [4, 3, 5] },
+              { data: [1, 6, 3] },
+              { data: [2, 5, 6] },
+            ]}
+            width={500}
+            height={300}
+          />
+        </Box>
       </Box>
     </Box>
   )
